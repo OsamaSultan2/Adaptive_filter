@@ -1,10 +1,10 @@
 function output = my_corr(X, Y)
 N = length(X);
 Z = zeros(N, 1);
-Y_mat = toeplitz(Y);
 for i = 1:N
-  Z(i) = (X.') * Y_mat(:, i);
+  Z(i) = (X.') * Y;
   Z(i) = Z(i) / N;
+  Y= [zeros(1, 1); Y(1:end-1)];
 end
 output = Z;
 end
