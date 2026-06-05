@@ -25,13 +25,8 @@ end
 x1= d1 + v1;
 %% calculating the optimum filter coefficients
 % calculating the autocorrelation of v2
-% r2 = zeros(limit +1, 1);
-% for i = 1:limit +1
-%   r2(i) = (-0.6)^(i-1);
-% end
 r2_calculated = my_corr(v2, v2);
 r2 = r2_calculated(1:limit +1);
-
 Rv2 = toeplitz(r2);
 % calulating the crosscorrelation of v1 and v2
 cor_v1_v2     = my_corr(v1, v2);
@@ -71,11 +66,6 @@ end
 x2= d2 + v1;
 %% calculating the optimum filter coefficients
 % calculating the autocorrelation of v2
-% r2 = zeros(limit +1, 1);
-% for i = 1:limit +1
-%   r2(i) = (-0.6)^(i-1);
-% end
-
 r2_calculated = my_corr(v2, v2);
 r2 = r2_calculated(1:limit +1);
 Rv2 = toeplitz(r2);
